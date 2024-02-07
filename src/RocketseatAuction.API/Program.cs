@@ -1,7 +1,5 @@
 using MediatR;
 using RocketseatAuction.Application.Contracts.Repositories;
-using RocketseatAuction.Application.Contracts.Services;
-using RocketseatAuction.Application.Services.Auction;
 using RocketseatAuction.Infraestructure.Contexts;
 using RocketseatAuction.Infraestructure.Repositories;
 
@@ -24,7 +22,6 @@ public class Program
         builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
         builder.Services.AddScoped<IUnityOfWork, UnityOfWork>();
         builder.Services.AddScoped<IAuctionRepository, AuctionRepository>();
-        builder.Services.AddScoped<IAuctionService, AuctionService>();
 
         var app = builder.Build();
 

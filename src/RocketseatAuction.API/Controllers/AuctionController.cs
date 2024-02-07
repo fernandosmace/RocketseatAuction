@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using RocketseatAuction.Application.Contracts.Services;
 using RocketseatAuction.Application.Queries.Auction.GetCurrentAuction;
 using RocketseatAuction.Domain.Entities;
 
@@ -9,11 +8,9 @@ namespace RocketseatAuction.API.Controllers;
 [ApiController]
 public class AuctionController : ControllerBase
 {
-    private readonly IAuctionService _auctionService;
     private readonly IMediator _bus;
-    public AuctionController(IAuctionService auctionService, IMediator bus)
+    public AuctionController(IMediator bus)
     {
-        _auctionService = auctionService;
         _bus = bus;
     }
 
